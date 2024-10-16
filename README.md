@@ -17,11 +17,10 @@ ModaInteligente é um sistema de recomendação de moda que utiliza algoritmos d
   - Pandas (manipulação de dados)
   - NumPy (operações matemáticas)
   - Scikit-learn (algoritmos de aprendizado de máquina)
-  - TensorFlow/Keras (caso você use deep learning)
   - Matplotlib/Seaborn (visualização de dados)
 - **Dataset**: [Fashion Clothing Products Dataset](link-do-dataset)
 - **Ferramentas**: Jupyter Notebook, GitHub
 
 ## Contribuições
-Este projeto foi desenvolvido por **Gabriel Galvão** e **João Victor**. Sinta-se à vontade para abrir uma issue ou enviar um pull request para melhorias.
+Este projeto foi desenvolvido por **Gabriel Galvão** e **João Victor**.
 
