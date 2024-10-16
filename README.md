@@ -22,5 +22,6 @@ ModaInteligente é um sistema de recomendação de moda que utiliza algoritmos d
 - **Ferramentas**: Jupyter Notebook, GitHub
 
 ## Contribuições
-Este projeto foi desenvolvido por **Gabriel Galvão** e **João Victor**.
+Este projeto foi desenvolvido por **Gabriel Galvão** e **João Victor**, com supervisão de **Miguel Domingos**, professor e cientista de dados.
+
 
