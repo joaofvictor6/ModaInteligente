@@ -9,15 +9,21 @@ Neste projeto, utilizei o *Fashion Clothing Products Dataset*, que contém infor
 ### **Fonte dos dados**
 [Kaggle - Fashion Clothing Products Catalog](https://www.kaggle.com/shivamb/fashion-clothing-products-catalog)
 
-### **Estrutura do dataset**
-- `ProductID`: Identificador único do produto.
-- `ProductName`: Nome do produto.
-- `ProductBrand`: Marca do produto.
-- `Gender`: Público-alvo (Masculino, Feminino, Unissex).
-- `Price (INR)`: Preço do produto em Rúpias Indianas.
-- `NumImages`: Quantidade de imagens disponíveis do produto.
-- `Description`: Descrição do produto.
-- `PrimaryColor`: Cor principal do produto.
+## Estrutura do Projeto
+
+```plaintext
+ModaInteligente/
+├── dados/                         # Arquivos de dados (não versionados)
+├── notebooks/                     # Notebooks principais
+│   ├── 01_EDA.ipynb               # Análise exploratória de dados
+│   ├── 02_Preprocessamento.ipynb  # Pré-processamento dos dados
+│   ├── 03_TF-IDF_e_Clusterizacao.ipynb  # TF-IDF e clusterização
+├── resultados/                    # Resultados e visualizações
+│   ├── metricas.md                # Resumo das métricas e resultados
+│   └── figuras/                   # Gráficos gerados durante o projeto
+├── README.md                      # Descrição geral do projeto
+├── requirements.txt               # Dependências do projeto
+└── .gitignore                     # Arquivos e pastas ignorados pelo Git
 
 ---
 
