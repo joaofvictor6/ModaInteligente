@@ -10,7 +10,3 @@
 ## Métricas de Avaliação
 - **Precisão do Modelo**: [valor]
 - **Cobertura do Modelo**: [valor]
-
-## Próximos Passos
-- Refinar clusters para incluir mais atributos.
-- Explorar modelos de filtragem colaborativa.
