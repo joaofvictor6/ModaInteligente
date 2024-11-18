@@ -1,51 +1,92 @@
-# 📊 Etapas do Projeto
+# 📊 ModaInteligente - Sistema de Recomendação de Moda
 
-## 1. Coleta e Entendimento dos Dados
-Eu utilizei o *Fashion Clothing Products Dataset* neste projeto, que contém informações detalhadas sobre produtos de vestuário, como ID, nome do produto, marca, gênero, preço, número de imagens e descrição.
-
-- **Fonte dos dados**: [Kaggle - Fashion Clothing Products Catalog](https://www.kaggle.com/shivamb/fashion-clothing-products-catalog)
-- **Estrutura do dataset**:
-  - `ProductID`: Identificador único do produto.
-  - `ProductName`: Nome do produto.
-  - `ProductBrand`: Marca do produto.
-  - `Gender`: Gênero para o qual o produto é destinado (Masculino, Feminino, Unissex).
-  - `Price (INR)`: Preço do produto em Rúpias Indianas.
-  - `NumImages`: Quantidade de imagens disponíveis para o produto.
-  - `Description`: Descrição do produto.
-  - `PrimaryColor`: Cor principal do produto.
+## **Descrição**
+Este projeto visa desenvolver um sistema de recomendação personalizado para produtos de vestuário utilizando o *Fashion Clothing Products Dataset*. Com base em técnicas de aprendizado de máquina, o sistema analisa as características dos produtos e comportamentos de usuários para oferecer recomendações relevantes.
 
 ---
 
-## 2. Análise Exploratória de Dados (EDA)
-A análise exploratória foi uma parte fundamental do projeto, pois me ajudou a entender a distribuição dos dados e identificar padrões importantes que poderiam impactar o sistema de recomendação.
+## 📂 **Estrutura do Projeto**
 
-### Principais insights que obtive:
-- **Distribuição dos preços**: A maioria dos produtos tem preços mais acessíveis, com uma pequena quantidade de produtos de alto valor.
-- **Distribuição por gênero**: A maior parte dos produtos é destinada ao público feminino, com uma boa quantidade de produtos masculinos e unissex.
-- **Marcas mais frequentes**: Algumas das marcas mais populares incluem *Roadster*, *HRX* e *DressBerry*.
+```plaintext
+ModaInteligente/
+├── dados/                         # Arquivos de dados (não versionados)
+├── notebooks/                     # Notebooks principais
+│   ├── 01_EDA.ipynb               # Análise exploratória de dados
+│   ├── 02_Preprocessamento.ipynb  # Pré-processamento dos dados
+│   ├── 03_TF-IDF_e_Clusterizacao.ipynb  # TF-IDF e clusterização
+├── resultados/                    # Resultados e visualizações
+│   ├── metricas.md                # Resumo das métricas e resultados
+│   └── figuras/                   # Gráficos gerados durante o projeto
+├── README.md                      # Descrição geral do projeto
+├── requirements.txt               # Dependências do projeto
+└── .gitignore                     # Arquivos e pastas ignorados pelo Git
+1. Coleta e Entendimento dos Dados
+Neste projeto, utilizei o Fashion Clothing Products Dataset, que contém informações detalhadas sobre produtos de vestuário. A análise desses dados foi o ponto de partida para entender o contexto e criar o sistema de recomendação.
 
----
+Fonte dos dados: Kaggle - Fashion Clothing Products Catalog
+Estrutura do dataset:
+ProductID: Identificador único do produto.
+ProductName: Nome do produto.
+ProductBrand: Marca do produto.
+Gender: Público-alvo (Masculino, Feminino, Unissex).
+Price (INR): Preço do produto em Rúpias Indianas.
+NumImages: Quantidade de imagens disponíveis do produto.
+Description: Descrição do produto.
+PrimaryColor: Cor principal do produto.
+2. Análise Exploratória de Dados (EDA)
+A Análise Exploratória de Dados (EDA) foi fundamental para entender o dataset e identificar padrões relevantes para o sistema de recomendação.
 
-## 3. Pré-Processamento dos Dados
-Antes de aplicar os modelos de aprendizado de máquina, eu precisei preparar os dados:
+Principais insights obtidos:
+Distribuição dos preços: A maioria dos produtos tem preços acessíveis, com uma pequena quantidade de itens premium.
+Distribuição por gênero: A maior parte dos produtos é destinada ao público feminino, mas também há opções para os públicos masculino e unissex.
+Marcas mais populares: As marcas mais frequentes incluem Roadster, HRX e DressBerry.
+3. Pré-Processamento dos Dados
+Antes de construir o sistema de recomendação, foi necessário realizar o pré-processamento dos dados para garantir sua integridade e adequação aos modelos de aprendizado de máquina.
 
-- **Tratamento de valores ausentes**: Algumas colunas, como `PrimaryColor`, continham valores ausentes. Eu tratei esses valores para garantir a integridade dos dados.
-- **Codificação**: Colunas categóricas como `Gender` e `ProductBrand` foram convertidas em valores numéricos utilizando *One-Hot Encoding*.
-- **Normalização**: Para garantir que os dados estivessem em uma escala apropriada para o aprendizado de máquina, normalizei a coluna de preços.
+Etapas do pré-processamento:
+Tratamento de valores ausentes:
+Substituí valores ausentes na coluna PrimaryColor por "Desconhecido".
+Codificação de variáveis categóricas:
+Utilizei One-Hot Encoding para converter colunas como Gender e ProductBrand em valores numéricos.
+Normalização dos preços:
+Escalei os valores na coluna Price para uma faixa entre 0 e 1 usando MinMaxScaler.
+4. Criação do Sistema de Recomendação
+Nesta etapa, desenvolvi o sistema de recomendação utilizando duas abordagens principais: Filtragem Colaborativa e Filtragem Baseada em Conteúdo.
 
----
+Abordagens Utilizadas:
+Filtragem Colaborativa:
+Recomendações baseadas em padrões de comportamento de usuários semelhantes.
+Filtragem Baseada em Conteúdo:
+Recomendações baseadas nas características dos produtos, como marca, preço e cor.
+Pipeline do modelo:
+Treinamento:
+Utilizei os dados pré-processados para treinar os modelos.
+Avaliação:
+A eficácia do sistema foi avaliada utilizando métricas como precisão e cobertura.
+5. Clusterização com TF-IDF
+Além das recomendações diretas, utilizei TF-IDF para representar os textos na coluna Description e apliquei o algoritmo de K-Means para identificar agrupamentos de produtos similares.
 
-## 4. Criação do Sistema de Recomendação
-Nesta etapa, utilizei algoritmos de aprendizado de máquina para construir um sistema de recomendação. O modelo foi baseado em dois métodos principais:
+Passos Realizados:
+TF-IDF:
+Transformei as descrições de texto em uma matriz numérica com as palavras mais relevantes.
+Clusterização com K-Means:
+Identifiquei clusters de produtos semelhantes e os associei às suas características.
+🔚 Conclusão
+O sistema ModaInteligente foi desenvolvido para oferecer recomendações personalizadas e análises estratégicas de produtos de vestuário.
 
-- **Filtragem Colaborativa**: Recomendei produtos com base no comportamento de compra de usuários semelhantes.
-- **Filtragem Baseada em Conteúdo**: Recomendei produtos com base nas características dos itens (marca, preço, cor, etc.).
-
-### Pipeline do modelo:
-- **Treinamento**: Utilizei os dados pré-processados para treinar os modelos de recomendação.
-- **Avaliação**: Avaliei o modelo com métricas como precisão e cobertura, para garantir que as recomendações fossem relevantes.
-
----
-
-## 🔚 Conclusão
-O sistema **ModaInteligente** que desenvolvi oferece uma experiência de recomendação personalizada, utilizando técnicas de aprendizado de máquina para otimizar a experiência de compra dos usuários. A análise exploratória de dados revelou informações valiosas sobre os padrões de consumo, e o sistema de recomendação foi criado para atender diferentes perfis de consumidores com sugestões personalizadas.
+Principais Etapas:
+Entender o dataset e extrair insights com a EDA.
+Pré-processar os dados para torná-los utilizáveis pelos modelos.
+Construir um sistema de recomendação eficiente baseado em aprendizado de máquina.
+Aplicar TF-IDF e K-Means para agrupar produtos e oferecer recomendações estratégicas.
+Próximos Passos:
+Expandir o sistema para incorporar recomendações personalizadas B2B, ajudando empresas a identificar oportunidades de mercado.
+Implementar outros algoritmos, como Redes Neurais e Sistemas Híbridos, para melhorar a precisão das recomendações.
+📋 Tecnologias Utilizadas
+Linguagem: Python
+Bibliotecas:
+Pandas, NumPy: Manipulação de dados.
+Scikit-learn: Modelos de aprendizado de máquina.
+NLTK: Processamento de linguagem natural.
+Matplotlib, Seaborn: Visualização de dados.
+Missingno: Visualização de valores ausentes.
